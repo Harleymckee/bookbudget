@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo "Running brew bundle"
+brew bundle
+
+if which asdf >/dev/null; then
+    echo "Running asdf install"
+    asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+    asdf install
+else
+    echo "asdf not found. Please make sure required versions are installed"
+fi
+
+echo "Installing mix dependencies"
+mix local.hex --force
+mix local.rebar --force
+mix deps.get
+
+if [ ! -f config/dev.secret.exs ]; then
+    echo "dev.secret.exs not found, creating"
+    echo "use Mix.Config" >> config/dev.secret.exs
+    echo "Make sure to add required secrets to this file"
+fi
+
+echo "Installing node dependencies"
+(cd assets && npm install && cd ..)
+
+echo "Creating Database and generating migrations"
+mix ecto.create && mix ecto.migrate
+
+echo "Seeding Database"
+mix run priv/repo/seeds.exs
+
+echo "===================================="
+echo "Setup complete."
+echo "Please make sure to add required secrets to config/dev.secret.exs"
+echo "Afterwards, to start server, run 'mix phx.server'"
+echo "===================================="

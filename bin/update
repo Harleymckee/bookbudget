@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Updating versions"
+brew bundle
+asdf install
+
+echo "Updating node dependencies"
+(cd assets && npm install && cd ..)
+
+echo "Updating Database"
+mix ecto.migrate

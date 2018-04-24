@@ -1,0 +1,54 @@
+{
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "deploy": "webpack -p"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "awesome-possum": "^3.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-minify": "^0.3.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "csswring": "^6.0.2",
+    "eslint": "^4.10.0",
+    "eslint-plugin-react": "^7.4.0",
+    "exports-loader": "^0.7.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "imports-loader": "^0.8.0",
+    "node-sass": "^4.5.3",
+    "postcss-flexbugs-fixes": "^3.0.0",
+    "postcss-loader": "^2.0.6",
+    "resolve-url-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.19.1",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.3.0",
+    "image-webpack-loader": "^4.2.0"
+  },
+  "browserslist": [
+    "ie 11",
+    "last 2 Chrome versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "last 2 iOS versions"
+  ]
+}
