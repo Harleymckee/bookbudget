@@ -3,13 +3,37 @@
   "scripts": {
   },
   "env": {
+    "HEROKU_APP_NAME": {
+			"required": true
+		},
+		"HEROKU_PARENT_APP_NAME": {
+			"required": true
+    },
+    "APP_DOMAIN": {
+			"required": false
+		},
+		"DATABASE_URL": {
+			"required": true
+    },
+    "POOL_SIZE": {
+			"required": true
+		}
   },
-  "formation": {
+	"formation": {
+		"web": {
+			"quantity": 1
+			, "size": "free"
+		}
   },
   "addons": [
-
+    "heroku-postgresql:hobby-basic"
   ],
-  "buildpacks": [
-
+	"buildpacks": [
+    {
+    "url": "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+    },
+    {
+      "url": "https://github.com/gjaldon/heroku-buildpack-phoenix-static.git"
+    }
   ]
 }
