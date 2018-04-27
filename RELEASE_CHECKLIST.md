@@ -18,3 +18,4 @@
 * [ ] Dead Man's Snitch is "The Lone Snitch" or higher
 * [ ] Dead Man's Snitch is configured to check at least daily (Change this item if schedule should be different)
 * [ ] Dead Man's Snitch sends alert emails to support@revelry.co
+
