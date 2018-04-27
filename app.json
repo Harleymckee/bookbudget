@@ -21,7 +21,10 @@
 			"quantity": 1
 			, "size": "free"
 		}
-	},
+  },
+  "addons": [
+    "heroku-postgresql:hobby-basic"
+  ],
 	"buildpacks": [
     {
     "url": "https://github.com/HashNuke/heroku-buildpack-elixir.git"
