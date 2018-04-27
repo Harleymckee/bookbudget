@@ -10,7 +10,7 @@
 			"required": true
     },
     "APP_DOMAIN": {
-			"required": true
+			"required": false
 		},
 		"DATABASE_URL": {
 			"required": true
